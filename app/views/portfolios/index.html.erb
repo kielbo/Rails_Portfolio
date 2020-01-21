@@ -8,5 +8,6 @@
   <!-- polecenie wyzej wywala blad bo nie przekazujemy obrazu w akcji create i miniaturki
     ////////////////////////////////////////////////////////////////////////////////
     pamietaj zeby zamykać komentarze w html bo potem tracisz czas na szukanie takich błachych omyłek chłopie ogarnij sie !!!! -->
-  <%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %>
+    <%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %>
+    <%= link_to "Edit entry", edit_portfolio_path(portfolio_items.id) %> <!-- tu zwykłe dodawanie sciezki do edycji wybranego wpisu -->
 <% end %>
