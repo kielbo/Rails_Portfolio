@@ -1,0 +1,12 @@
+<h1> Indeksy </h1>
+
+<% @portfolio_item.each do |portfolio_items| %>
+  <p> <%= portfolio_items.title %></p>
+  <p> <%= portfolio_items.body %></p>
+  <p> <%= portfolio_items.subtitle %></p>
+  <%#=image_tag( portfolio_items.thumb_image) %> 
+  <!-- polecenie wyzej wywala blad bo nie przekazujemy obrazu w akcji create i miniaturki
+    ////////////////////////////////////////////////////////////////////////////////
+    pamietaj zeby zamykać komentarze w html bo potem tracisz czas na szukanie takich błachych omyłek chłopie ogarnij sie !!!! -->
+  <%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %>
+<% end %>
