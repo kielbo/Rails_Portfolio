@@ -1,5 +1,5 @@
 <h1> Indeksy </h1>
-
+<%= link_to "Create new item" new_portfolio_path %>
 <% @portfolio_item.each do |portfolio_items| %>
   <p> <%= portfolio_items.title %></p>
   <p> <%= portfolio_items.body %></p>
