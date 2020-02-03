@@ -1,7 +1,7 @@
 <h1> Indeksy </h1>
 <%= link_to "Create new item", new_portfolio_path %>
 <% @portfolio_item.each do |portfolio_items| %>
-  <p> <%= link_to portfolio_items.title, portfolio_path(portfolio_items.id) %></p>
+  <p> <%= link_to portfolio_items.title, portfolio_show_path(portfolio_items.id) %></p>
   <!-- rails sam sie domysli czego ma szukać wystarczy podać portfolio_items jako akrgument. (bez .id) -->
   <p> <%= portfolio_items.body %></p>
   <p> <%= portfolio_items.subtitle %></p>
