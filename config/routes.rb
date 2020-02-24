@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'# ustawiamy nowa sciezke do akcji show i ustalamy jej alias, dostep poprzez portfolio_show_path
   get 'about-me', to: 'pages#about'
+  get 'angular-items', to: 'portfolios#angular'
   get 'contact', to: 'pages#contact'
 
   resources :blogs do

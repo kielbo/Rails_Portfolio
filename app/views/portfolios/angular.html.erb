@@ -1,0 +1,16 @@
+<h1> Indeksy Angular </h1>
+<%= link_to "Create new item", new_portfolio_path %>
+<% @angular_portfolio_item.each do |portfolio_items| %>
+  <p> <%= link_to portfolio_items.title, portfolio_show_path(portfolio_items.id) %></p>
+  <!-- rails sam sie domysli czego ma szukać wystarczy podać portfolio_items jako akrgument. (bez .id) -->
+  <p> <%= portfolio_items.body %></p>
+  <p> <%= portfolio_items.subtitle %></p>
+  <%#=image_tag( portfolio_items.thumb_image) %> 
+  <!-- polecenie wyzej wywala blad bo nie przekazujemy obrazu w akcji create i miniaturki
+    ////////////////////////////////////////////////////////////////////////////////
+    pamietaj zeby zamykać komentarze w html bo potem tracisz czas na szukanie takich błachych omyłek chłopie ogarnij sie !!!! -->
+    <%= image_tag portfolio_items.thumb_image if !portfolio_items.thumb_image.nil? %>
+    </br>
+    <%= link_to "Edit entry", edit_portfolio_path(portfolio_items) %> <!-- tu zwykłe dodawanie sciezki do edycji wybranego wpisu -->
+    <%= link_to "Delete entry", portfolio_path(portfolio_items), method: :delete, data: {confirm: "Are You sure that You want to delete %d entry ?" % portfolio_items.id} %>
+<% end %>
