@@ -3,8 +3,14 @@ class PortfoliosController < ApplicationController
     @portfolio_item = Portfolio.all
   end
 
+  def angular
+    @angular_portfolio_item = Portfolio.angular
+  end
+
+
   def new
     @portfolio_item = Portfolio.new
+    3.times {@portfolio_item.technologies.build }
   end
 
   
